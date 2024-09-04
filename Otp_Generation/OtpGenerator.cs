@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace OtpGenerationSdk
+namespace Otp_Generation
 {
     public class OtpGenerator
     {
