@@ -1,4 +1,4 @@
-# OtpGenerationSdk
+# Otp Generation Sdk
 
 OtpGenerationSdk is a .NET SDK for generating One-Time Passwords (OTPs). This SDK provides a simple and secure way to generate OTPs of various lengths using a secret key.
 
