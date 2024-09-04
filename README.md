@@ -45,8 +45,10 @@ class Program
 5. Push to the branch (git push origin feature/your-feature).
 6. Create a new Pull Request.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 
 
 **Author: [Devi Prakash](https://github.com/dprakash2101)**
