@@ -1,0 +1,25 @@
+name: Publish .NET Package
+
+on:
+
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number for the package'
+        required: true
+        
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Publish to NuGet
+        uses: im-deviprakash/publishto_nuget@main
+        with:
+          NUGET_API_KEY: ${{ secrets.APIKEY_NUGET }}
+          PROJECT_PATH: "./Otp_Generation/Otp_Generation/Otp_Generation.csproj"
+          VERSION: ${{ github.event.inputs.version }}
