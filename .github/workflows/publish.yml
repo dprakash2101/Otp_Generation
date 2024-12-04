@@ -1,13 +1,7 @@
 name: Publish .NET Package
 
 on:
-
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version number for the package'
-        required: true
-        
 
 jobs:
   publish:
@@ -21,4 +15,5 @@ jobs:
         uses: your-username/your-repo-name@v1
         with:
           nuget_api_key: ${{ secrets.APIKEY_NUGET }}
-          project_path: "Otp_Generation/Otp_Generation.cspr
+          project_path: "Otp_Generation/Otp_Generation.csproj"
+          version: ${{ github.event.inputs.version }}
