@@ -18,8 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Publish to NuGet
-        uses: im-deviprakash/publishto_nuget@wokbr
+        uses: your-username/your-repo-name@v1
         with:
-          NUGET_API_KEY: ${{ secrets.APIKEY_NUGET }}
-          PROJECT_PATH: "./Otp_Generation/Otp_Generation/Otp_Generation.csproj"
-          VERSION: ${{ github.event.inputs.version }}
+          nuget_api_key: ${{ secrets.APIKEY_NUGET }}
+          project_path: "Otp_Generation/Otp_Generation.cspr
