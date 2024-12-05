@@ -2,13 +2,17 @@ name: Publish .NET Package
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version of the package'
+        required: true
 
 jobs:
   publish:
     runs-on: ubuntu-latest
 
     steps:
-      -  uses: actions/checkout@v4
+      - uses: actions/checkout@v4
       - name: Publish to NuGet
         uses: im-deviprakash/publishto_nuget@wokbr
         with:
