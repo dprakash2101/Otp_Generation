@@ -1,21 +1,20 @@
-name: Publish .NET Package
+name: Publish NuGet Package
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version of the package'
-        required: true
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Specify the GitHub runner
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Publish to NuGet
-        uses: im-deviprakash/publishto_nuget@wokbr
+      - name: Checkout repository
+        uses: actions/checkout@v3  # Checkout the user's repository to the runner
+
+      - name: Use NuGet Publisher Action
+        uses: im-deviprakash/publishto_nuget@wokbr  # Replace with your action's repository and version
         with:
-          nuget_api_key: ${{ secrets.APIKEY_NUGET }}
-          project_path: "Otp_Generation/Otp_Generation.csproj"
-          version: ${{ github.event.inputs.version }}
+          nuget_api_key: ${{ secrets.NUGET_API_KEY }}  # NuGet API Key (from GitHub Secrets)
+          nuget_source: 'https://api.nuget.org/v3/index.json'  # Default NuGet source (can be customized if needed)
