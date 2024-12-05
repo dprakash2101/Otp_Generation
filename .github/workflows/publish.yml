@@ -16,3 +16,4 @@ jobs:
         with:
           nuget_api_key: ${{ secrets.NUGET_API_KEY }}  # NuGet API Key (from GitHub Secrets)
           nuget_source: 'https://api.nuget.org/v3/index.json'  # Default NuGet source (can be customized if needed)
+          repo_url: ${{ github.repository }}  # Pass the repository URL (using the current repo)
